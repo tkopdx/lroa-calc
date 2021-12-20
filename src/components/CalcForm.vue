@@ -4,7 +4,7 @@
           Let's get calculating!
       </h2>
       <FormPage
-        :type="this.page"
+        :page="this.page"
       />
   </div>
 </template>

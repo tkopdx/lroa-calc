@@ -14,6 +14,7 @@
     <CalcForm
         v-if="isCalculating"
     />
+    <div>Icons made by <a href="https://www.flaticon.com/authors/ibrandify" title="ibrandify">ibrandify</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </template>
 
 <script>
@@ -28,8 +29,13 @@ const playerTemplate = {
         5: 0,
         6: 0,
         7: 0,
-        8: 0
-    }
+        8: 0,
+        9: 0,
+        10: 0,
+        11: 0,
+        12: 0
+    },
+    total: 0
 }
 
 import Players from './Players.vue';

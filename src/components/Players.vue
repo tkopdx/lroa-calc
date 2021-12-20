@@ -4,7 +4,7 @@
             Players
         </h2>
         <ul>
-            <Player v-for="player in players" :key="player.id" :name="player.name" :data="player.data" :id="player.id"/>
+            <Player v-for="player in players" :key="player.id" :name="player.name" :data="player.data" :id="player.id" :total="player.total"/>
         </ul>
     </div>
   
