@@ -49,6 +49,7 @@ export default {
     img {
         height: 25px;
         width: auto;
+        margin: 2px;
     }
 
 </style>
