@@ -65,6 +65,7 @@ export default {
         this.emitter.on('previousPlayer', this.previousPlayer);
         this.emitter.on('handleDecreasePlayers', this.decreasePlayers);
         this.emitter.on('handleIncreasePlayers', this.increasePlayers);
+        this.emitter.on('handleCloseCalcForm', this.setIsCalculating);
     },
     computed: {
         calculatingPlayerObject: function () {
@@ -178,6 +179,7 @@ export default {
             this.players[playerI].data.calculatedPoints[type] = value;
         },
         calculateTotal: function () {
+            this.setIsCalculating(false);
             this.players.map(player => {
                 const total = Object.keys(player.data.calculatedPoints).reduce( (acc, key) => {
                     acc += player.data.calculatedPoints[key];

@@ -1,5 +1,8 @@
 <template>
+    <div class="calc-outer">
+        <div class="calc-mid">
   <div class="calc-form">
+        <button class="close-but" @click="emitCloseCalcForm">x</button>
       <h2>
           Let's get calculating!
       </h2>
@@ -17,6 +20,8 @@
             <button v-if="this.isFinalPlayer" @click="emitCalculateTotal">calculate!</button>
             <button v-else @click="emitNextPlayer">next player</button>
         </div>
+        </div>
+  </div>
         </div>
   </div>
 </template>
@@ -73,8 +78,8 @@ export default {
         setCalcFormPage: function (info) {
             this.page = info.page;
         },
-        scrollToQuestion: function () {
-
+        emitCloseCalcForm: function () {
+            this.emitter.emit('handleCloseCalcForm', false);
         }
     }
 }
@@ -82,10 +87,43 @@ export default {
 
 <style>
 
+    .calc-outer {
+        display: table;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color:rgba(0, 0, 0, 0.589);
+    }
+
+    .calc-mid {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
     .calc-form {
         box-shadow: 0 0 2px 1px black;
-        width: 95%;
+        background: linear-gradient(#f9bf3b, #fcda8d);
+        width: 80%;
         margin: auto;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .close-but {
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: auto;
+        border-radius: 100px;
+    }
+
+    .calc-form h2 {
+        padding-top: 25px;
     }
 
     .buttons-box {
@@ -93,7 +131,7 @@ export default {
         margin: auto;
         justify-content: center;
         align-items: center;
-        margin-top: 15px;
+        padding: 15px;
     }
 
 </style>

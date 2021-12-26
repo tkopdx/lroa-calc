@@ -131,7 +131,7 @@ export default {
     }
 
     .form-input-box input {
-        min-width: 200px;
+        min-width: 100%;
         margin-left: 10px;
     }
 

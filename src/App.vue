@@ -19,6 +19,7 @@ html {
   background: url('https://cdnb.artstation.com/p/assets/images/images/031/261/071/large/ondrej-hrdina-krabice12-3.jpg?1603111592') center center fixed;
   background-size: cover;
   scroll-behavior: smooth;
+  transition: all 0.2s;
 }
 
 #app {
