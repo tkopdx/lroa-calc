@@ -42,11 +42,11 @@ export default {
     },
     methods: {
         emitNameChange: function (e) {
-            console.log('name changed!', e.target.value, this.id);
+            // console.log('name changed!', e.target.value, this.id);
             this.emitter.emit('handlePlayerNameChange', {value: e.target.value, id: this.id});
         },
         imgSrc: function (item) {
-            console.log(images[item]);
+            // console.log(images[item]);
             return images[item];
         },
         increaseFakeTotal() {
@@ -65,7 +65,7 @@ export default {
             this.fakeTotalInterval = setInterval(this.increaseFakeTotal, 10);
         },
         handleFakeTotalEnd() {
-            console.log(this.total);
+            // console.log(this.total);
             this.showTotal = true
         }
     }

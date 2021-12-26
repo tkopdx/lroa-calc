@@ -81,9 +81,9 @@ export default {
     }, 
     methods: {
         increasePlayers: function () {
-            console.log(this.numOfPlayers);
+            // console.log(this.numOfPlayers);
             this.numOfPlayers++;
-            console.log(this.numOfPlayers);
+            // console.log(this.numOfPlayers);
             return this.addPlayer(this.numOfPlayers);
         },
         decreasePlayers: function () {
@@ -95,21 +95,21 @@ export default {
             newPlayer.name = `Player ${player}`
             newPlayer.id = player;
             this.players.push(newPlayer);
-            console.log(this.players);
+            // console.log(this.players);
         },
         removePlayer: function (id) {
             const playerI = this.players.findIndex(player => player.id === id);
             this.players.splice(playerI, 1);
         },
         updatePlayerName: function (info) {
-            console.log(info);
-            console.log(this.players);
+            // console.log(info);
+            // console.log(this.players);
             const playerI = this.players.findIndex(player => player.id === info.id);
             this.players[playerI].name = info.value;
         },
         setIsCalculating(state) {
             this.isCalculating = state;
-            console.log(this.isCalculating);
+            // console.log(this.isCalculating);
         },
         nextPlayer() {
             this.calculatingPlayer++;
@@ -122,7 +122,7 @@ export default {
         handleCalcFormInputChange: function (info) {
             const playerI = this.players.findIndex(player => player.id === this.calculatingPlayer);
             this.players[playerI].data.inputs[info.type] = info.value;
-            console.log(this.players[playerI]);
+            // console.log(this.players[playerI]);
             this.calculatePoints(info.type);
         },
         calculatePoints: function (type) {

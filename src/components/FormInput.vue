@@ -61,7 +61,7 @@ export default {
     },
     methods: {
         emitInputChange: function (e) {
-            console.log('input changed!', e.target.value, this.type);
+            // console.log('input changed!', e.target.value, this.type);
             this.emitter.emit('handleCalcFormInputChange', {value: parseInt(e.target.value), type: this.type});
         }
     },
@@ -73,12 +73,12 @@ export default {
             return calculationText[this.type]
         },
         computedMax: function () {
-            console.log(this.numOfPlayers.value);
+            // console.log(this.numOfPlayers.value);
             switch (this.type) {
                 case 1:
                     return 23;
                 case 2:
-                    return 23;
+                    return 10;
                 case 3:
                     return this.numOfPlayers.value;
                 case 4:
